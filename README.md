@@ -1,10 +1,8 @@
 # Random_Forest_Landsat
 RandomForest classification of satellite imagery (Landsat 5 TM / Landat 8 OLI)  and validation 
 
-#Script: Harald Schernthanner: RandomForest classifier /  
-#Author: Schernthanner, Cardenas                        
-#  Ver.: 0.3 (09/2017)                                           
-
+#Script: Harald Schernthanner, Aura Cardenas: RandomForest classifier /  
+                                                        
 #Content                                 
 #I: Perparing the R working enviroment   
 #II: Preprocess the imagery              
