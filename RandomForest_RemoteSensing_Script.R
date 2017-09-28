@@ -242,8 +242,6 @@ asbio::Kappa(landsat,reference)
 
 
 
-
-
 ##############################################################################################################################
 #CV credits:                                                                                                                 #
 #   R Raster package: Hijmans et al: https://cran.r-project.org/web/packages/raster/index.html                               #
@@ -257,4 +255,3 @@ asbio::Kappa(landsat,reference)
 
 
 
-####Here comes the external accuracy assessment
