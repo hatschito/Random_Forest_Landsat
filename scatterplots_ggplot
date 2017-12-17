@@ -1,0 +1,28 @@
+#########################################################
+#Script: Scatter plot                                   #              
+# Scatterplots to test spectral sperability             #
+#########################################################
+
+#Clear Workspace
+rm(list = ls())
+
+#System path to the data
+setwd("/Users/hatschito/Desktop/")
+
+#save.image("Spec_Plot.RData")
+load.image("Spec_Plot.RData")
+
+#Plot of spectral distibution
+#install.packages("ggplot2")
+
+write.csv(spec_dist_train_area_2015, "spec_dist_train_area_2015_2.csv")
+spec_dist_train_area_2015 <- read.csv2("spec_dist_train_area_2015_2", sep = ",", dec = ".")
+spec_dist_train_area_2015_band_1_2 <- read.csv2("spec_dist_train_area_2015_1_2.csv", sep = ",", dec = ".")
+
+library(ggplot2)
+str(spec_dist_train_area_2015)
+
+#Scatterplot with ggplot
+
+sp <- ggplot(spec_dist_train_area_2015_band_1_2, aes(x = layer.3, y= layer.5, col = factor(Class))) + geom_point()
+sp + scale_color_manual(values=c("#008040","#191919", "#00ffff", "#60df86", "#ffff00", "#b3b3b3", "#804000", "#6666ff", "#ff0000", "#a6cee3"))
