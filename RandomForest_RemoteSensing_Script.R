@@ -1,7 +1,7 @@
 #########################################################
 #Script: Harald Schernthanner: RandomForest classifier /#  
 #Author: Schernthanner, Cardenas                        #
-#  Ver.: 0.3                                            #
+#  Ver.: 0.4, 17_12_2017                                #
 #########################################################
 
 ##########################################
@@ -248,7 +248,7 @@ asbio::Kappa(landsat,reference)
 #   RandomForest: A. Liaw and M. Wiener (2002). Classification and Regression by randomForest. R News 2(3), 18--22.          #
 #   Model tuning: https://machinelearningmastery.com/tune-machine-learning-algorithms-in-r/                                  #   
 #   Data frame manipulation: https://www.rdocumentation.org/packages/fifer/versions/1.0                                      #
-#   RStoolbox: Benjamin Leuner and Net Horning: https://cran.r-project.org/web/packages/RStoolbox/index.html                 #
+#   RStoolbox: Benjamin Leuner and Ned Horning: https://cran.r-project.org/web/packages/RStoolbox/index.html                 #
 #   R sp package: Pepebsma and Hijmans:https://cran.r-project.org/web/packages/sp/index.html                                 #
 #   asbio: A Collection of Statistical Tools for Biologists, Aho, https://cran.r-project.org/web/packages/asbio/index.html   #
 ##############################################################################################################################
