@@ -1,7 +1,7 @@
-#########################################################
-#Script: Scatter plot                                   #              
-# Scatterplots to test spectral sperability             #
-#########################################################
+###############################################################
+#Script: I: scatter plots / II spectral seperability metrics  #              
+#                                                             #
+###############################################################
 
 #Clear Workspace
 rm(list = ls())
@@ -11,8 +11,10 @@ setwd("/Users/hatschito/Desktop/")
 
 #save.image("Spec_Plot.RData")
 load.image("Spec_Plot.RData")
+###############################
+#I Plot of spectral distibution##
+###############################
 
-#Plot of spectral distibution
 #install.packages("ggplot2")
 
 write.csv(spec_dist_train_area_2015, "spec_dist_train_area_2015_2.csv")
@@ -26,3 +28,11 @@ str(spec_dist_train_area_2015)
 
 sp <- ggplot(spec_dist_train_area_2015_band_1_2, aes(x = layer.3, y= layer.5, col = factor(Class))) + geom_point()
 sp + scale_color_manual(values=c("#008040","#191919", "#00ffff", "#60df86", "#ffff00", "#b3b3b3", "#804000", "#6666ff", "#ff0000", "#a6cee3"))
+
+###############################
+#II Seperability metrics     ##
+###############################
+
+library(spatialEco)
+seperability_3_4 <- read.table("2015seperability_class_3_4.csv", sep = ",", , dec=".")
+separability(seperability_1_3$layer.3, seperability_1_3$layer.5)
