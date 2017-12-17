@@ -11,18 +11,25 @@ setwd("/Users/hatschito/Desktop/")
 
 #save.image("Spec_Plot.RData")
 load.image("Spec_Plot.RData")
+
+#Select classes for spectral plots and seperability metrics from data.frame
+spect_dist_2 <- spec_dist_train_area_2015[spec_dist_train_area_2015$trainingPoint_UTM.MC_ID == 1, ]
+spect_dist_2 <- spec_dist_train_area_2015[spec_dist_train_area_2015$trainingPoint_UTM.MC_ID == 2, ]
+
 ###############################
 #I Plot of spectral distibution##
 ###############################
 
 #install.packages("ggplot2")
-
-write.csv(spec_dist_train_area_2015, "spec_dist_train_area_2015_2.csv")
-spec_dist_train_area_2015 <- read.csv2("spec_dist_train_area_2015_2", sep = ",", dec = ".")
-spec_dist_train_area_2015_band_1_2 <- read.csv2("spec_dist_train_area_2015_1_2.csv", sep = ",", dec = ".")
-
 library(ggplot2)
-str(spec_dist_train_area_2015)
+
+#Extract reflectance from training data
+spectral_values2015 <- extract(Landsat_Matiguas_2015, training_UTM)
+spec_dist_train_area_2015 <- cbind(spec,trainingPoint_UTM$MC_ID )
+
+#Combine to classes for bivariate plot
+spec_dist_train_area_2015_band_1_2 <- cbind(spect_dis_2, spect_dist2)
+str(spec_dist_train_area_2015_band_1_2)
 
 #Scatterplot with ggplot
 
@@ -33,6 +40,8 @@ sp + scale_color_manual(values=c("#008040","#191919", "#00ffff", "#60df86", "#ff
 #II Seperability metrics     ##
 ###############################
 
+install.packages("spatialEco")
 library(spatialEco)
-seperability_3_4 <- read.table("2015seperability_class_3_4.csv", sep = ",", , dec=".")
-separability(seperability_1_3$layer.3, seperability_1_3$layer.5)
+#Calculates different spectral seperability metrics e.g. Jeffries-Matusita. plot = TRUE plots the seperability 
+separability(spect_dist_2, spect_dist3, plot = TRUE)
+
